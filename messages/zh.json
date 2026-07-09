@@ -89,7 +89,9 @@
     "websiteLabel": "网站"
   },
   "intro": {
-    "skip": "跳过片头"
+    "skip": "跳过片头",
+    "soundOn": "开启声音",
+    "soundOff": "关闭声音"
   },
   "chat": {
     "title": "BERQUT 助手",

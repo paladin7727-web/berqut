@@ -89,7 +89,9 @@
     "websiteLabel": "Website"
   },
   "intro": {
-    "skip": "Intro überspringen"
+    "skip": "Intro überspringen",
+    "soundOn": "Ton einschalten",
+    "soundOff": "Ton ausschalten"
   },
   "chat": {
     "title": "BERQUT Assistent",

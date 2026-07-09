@@ -89,7 +89,9 @@
     "websiteLabel": "Website"
   },
   "intro": {
-    "skip": "Skip intro"
+    "skip": "Skip intro",
+    "soundOn": "Turn sound on",
+    "soundOff": "Turn sound off"
   },
   "chat": {
     "title": "BERQUT Assistant",

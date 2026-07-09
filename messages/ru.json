@@ -89,7 +89,9 @@
     "websiteLabel": "Сайт"
   },
   "intro": {
-    "skip": "Пропустить"
+    "skip": "Пропустить",
+    "soundOn": "Включить звук",
+    "soundOff": "Выключить звук"
   },
   "chat": {
     "title": "Ассистент BERQUT",

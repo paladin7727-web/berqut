@@ -89,7 +89,9 @@
     "websiteLabel": "Sito web"
   },
   "intro": {
-    "skip": "Salta l'introduzione"
+    "skip": "Salta l'introduzione",
+    "soundOn": "Attiva audio",
+    "soundOff": "Disattiva audio"
   },
   "chat": {
     "title": "Assistente BERQUT",

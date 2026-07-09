@@ -17,6 +17,12 @@ import { useTranslations } from "next-intl";
  * (reduced-motion / save-data) never download the video — they get a static
  * branded screen instead. All transitions are plain CSS (no animation
  * library) — see the inline `transition` styles below.
+ *
+ * Audio: the video autoplays MUTED (browsers block autoplay with sound). A
+ * corner toggle lets the visitor turn sound on — a real user gesture, which
+ * satisfies the autoplay policy. Turning it on swaps to an audio-enabled
+ * source (`intro-with-sound.mp4`, only downloaded on that interaction) at the
+ * current playback position. The preference is remembered for the session.
  */
 
 type Mode = "video" | "static";
@@ -25,6 +31,25 @@ type Mode = "video" | "static";
 type NetworkInformation = {
   saveData?: boolean;
 };
+
+const SOUND_SRC = "/videos/intro-with-sound.mp4";
+const SOUND_PREF_KEY = "berqut-intro-sound";
+
+function readSoundPref(): boolean {
+  try {
+    return sessionStorage.getItem(SOUND_PREF_KEY) === "on";
+  } catch {
+    return false;
+  }
+}
+
+function persistSoundPref(on: boolean): void {
+  try {
+    sessionStorage.setItem(SOUND_PREF_KEY, on ? "on" : "off");
+  } catch {
+    /* sessionStorage unavailable — non-fatal */
+  }
+}
 
 function prefersReducedMotion(): boolean {
   return (
@@ -55,6 +80,9 @@ export default function Intro({ onEnter }: { onEnter: () => void }) {
   const t = useTranslations("intro");
 
   const videoRef = useRef<HTMLVideoElement>(null);
+  // Whether we've already swapped in the audio-enabled source (only download
+  // it once, and only on demand).
+  const soundActivatedRef = useRef(false);
 
   // Resolved on the client after mount so SSR markup is deterministic.
   const [mode, setMode] = useState<Mode | null>(null);
@@ -64,6 +92,8 @@ export default function Intro({ onEnter }: { onEnter: () => void }) {
   // Set once the video has played through (or bailed out).
   const [videoDone, setVideoDone] = useState(false);
   const [showSkip, setShowSkip] = useState(false);
+  // Whether audio is currently on. Always starts false (muted autoplay).
+  const [soundOn, setSoundOn] = useState(false);
   // Drives the container's fade-in once mode is resolved.
   const [containerVisible, setContainerVisible] = useState(false);
   // Drives the container's fade-out when the user enters the site.
@@ -78,6 +108,62 @@ export default function Intro({ onEnter }: { onEnter: () => void }) {
     // Matches the transition duration below — no onComplete callback needed.
     setTimeout(onEnter, 600);
   }, [onEnter]);
+
+  // Swap to the audio-enabled source (once), preserving position, then unmute
+  // and play. Returns true if sound is now playing.
+  const enableSound = useCallback(async (): Promise<boolean> => {
+    const v = videoRef.current;
+    if (!v) return false;
+
+    if (!soundActivatedRef.current) {
+      soundActivatedRef.current = true;
+      const resumeAt = v.currentTime;
+      const wasEnded = v.ended;
+      v.src = SOUND_SRC;
+      v.load();
+      await new Promise<void>((resolve) => {
+        const done = () => {
+          v.removeEventListener("loadeddata", done);
+          resolve();
+        };
+        v.addEventListener("loadeddata", done, { once: true });
+        setTimeout(done, 3000); // safety net
+      });
+      if (!wasEnded) {
+        try {
+          v.currentTime = resumeAt;
+        } catch {
+          /* seeking not ready — start from 0 */
+        }
+      }
+    }
+
+    v.muted = false;
+    try {
+      await v.play();
+      setSoundOn(true);
+      persistSoundPref(true);
+      return true;
+    } catch {
+      // Browser blocked unmuted playback — keep playing, just muted.
+      v.muted = true;
+      setSoundOn(false);
+      persistSoundPref(false);
+      return false;
+    }
+  }, []);
+
+  const toggleSound = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (soundOn) {
+      v.muted = true;
+      setSoundOn(false);
+      persistSoundPref(false);
+    } else {
+      void enableSound();
+    }
+  }, [soundOn, enableSound]);
 
   // Decide the mode once, on the client. This syncs React with the runtime
   // environment (media query + network info), so it must run post-mount to
@@ -126,9 +212,18 @@ export default function Intro({ onEnter }: { onEnter: () => void }) {
     if (!v) return;
     const p = v.play();
     if (p) {
-      p.catch(() => setVideoDone(true));
+      p.then(() => {
+        // If the visitor enabled sound earlier this session, try to restore it
+        // (best-effort — the browser may still require a fresh gesture).
+        if (readSoundPref() && !soundActivatedRef.current) {
+          void enableSound();
+        }
+      }).catch(() => setVideoDone(true));
     }
-  }, []);
+  }, [enableSound]);
+
+  const showSoundToggle =
+    mode === "video" && videoMounted && !videoDone && showSkip;
 
   return (
     <div
@@ -191,6 +286,31 @@ export default function Intro({ onEnter }: { onEnter: () => void }) {
           className="w-[min(80vw,560px)] h-auto"
         />
       </button>
+
+      {/* Sound on/off toggle — bottom-left, mirroring the skip button. Only in
+          video mode, so it never appears in the static fallback. */}
+      {showSoundToggle && (
+        <button
+          onClick={toggleSound}
+          aria-label={soundOn ? t("soundOff") : t("soundOn")}
+          aria-pressed={soundOn}
+          className="absolute bottom-8 left-8 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-[#b8925a] text-[#b8925a] hover:bg-[#b8925a] hover:text-black transition-colors"
+        >
+          {soundOn ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M11 5 6 9H2v6h4l5 4z" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M11 5 6 9H2v6h4l5 4z" />
+              <path d="M23 9l-6 6" />
+              <path d="M17 9l6 6" />
+            </svg>
+          )}
+        </button>
+      )}
 
       {showSkip && (
         <button
