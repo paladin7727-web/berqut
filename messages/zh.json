@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "BERQUT GROUP — 哈萨克斯坦阿斯塔纳高端房产与移居服务",
+    "description": "从选房、验房到装修与资产管理，BERQUT GROUP 为国际客户提供阿斯塔纳高端房地产投资、翻新与移居一站式服务，一个团队对接全程。"
+  },
+  "nav": {
+    "about": "关于我们",
+    "realEstate": "房地产",
+    "construction": "建筑装修",
+    "relocation": "移居服务",
+    "founder": "创始人",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "tagline": "从空置的平方米到入住即享的高端生活",
+    "cta": "进入网站"
+  },
+  "about": {
+    "title": "关于 BERQUT GROUP",
+    "description": "BERQUT GROUP 是哈萨克斯坦的高端服务公司，为需要的不仅仅是一名经纪人的客户提供房地产、装修、居住与物业管理的一站式服务。从选房、验房、交易协助，到装修、室内设计、家具配置、出租与长期管理，我们对整个流程负责到底。",
+    "pillars": {
+      "onePoint": {
+        "title": "一个对接窗口",
+        "description": "房产、装修与管理的唯一合作伙伴。"
+      },
+      "highClass": {
+        "title": "高端品质",
+        "description": "高端呈现与严格的质量把控。"
+      },
+      "kazakhstan": {
+        "title": "哈萨克斯坦",
+        "description": "面向国际客户的阿斯塔纳与哈萨克斯坦。"
+      }
+    }
+  },
+  "realEstate": {
+    "title": "房地产 — 经纪与投资",
+    "description": "为您甄选公寓、别墅、高端住宅及商业地产。核实物业、地段、价格与流动性。全程协助交易直至交房。投资服务涵盖出租、转售及增值装修。",
+    "process": ["寻找", "核实", "成交", "增值"],
+    "processDetails": [
+      "根据您的目标与预算，甄选公寓、别墅、高端住宅及商业地产。",
+      "在您决定前核实物业、地段、价格与流动性——绝无意外。",
+      "全程协助交易，从谈判到交付钥匙。",
+      "出租、转售与增值装修，让您的物业成为持续增值的资产。"
+    ],
+    "cta": "咨询房源"
+  },
+  "construction": {
+    "title": "建筑装修 — 翻新与居住",
+    "description": "建筑施工、整体翻新与高级定制装修。室内设计：布局规划、灯光、材料、家具与电器。软装工程：厨房、门窗、卫浴、软装与陈设。为出售、出租或自住提供样板房陈设服务。",
+    "cta": "启动项目"
+  },
+  "relocation": {
+    "title": "移居服务 — 管理与语言",
+    "description": "为家庭、企业家和投资者提供移居支持。物业管理：租户对接、水电物业费、维修与报告。私人客户服务：严格保密与高标准支持。豪宅与商业地产：公寓、别墅、办公室及核心地段物业。",
+    "languages": "俄语、哈萨克语、英语、德语、中文、西班牙语、意大利语",
+    "cta": "规划您的移居"
+  },
+  "founder": {
+    "title": "关于罗伯特·索瓦",
+    "name": "罗伯特·索瓦",
+    "role": "BERQUT GROUP 创始人",
+    "bio": "罗伯特·索瓦（Robert Sowa），1971年出生，德国公民，BERQUT Real Estate & Living International 创始人。他精通俄语、英语、德语、波兰语和意大利语。凭借35年建筑与工业工程领域的国际经验，罗伯特曾参与横跨多个大洲的重大多百万美元级项目——从澳大利亚、中国到欧洲、南北美洲，再到中东与中亚。他以严谨、自律、工程思维的清晰性以及对每一个结果的个人责任感而闻名。数百家国际工程与建筑公司都曾将项目托付于他。如今，他通过 BERQUT 将这份标准、经验与国际化思维带到哈萨克斯坦。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "formName": "姓名",
+    "formEmail": "邮箱",
+    "formPhone": "电话",
+    "formType": "我是...",
+    "formTypeInvestor": "投资者",
+    "formTypeFamily": "家庭客户",
+    "formTypeEntrepreneur": "企业家",
+    "formMessage": "留言",
+    "formSubmit": "提交",
+    "privacy": "我们尊重您的隐私，绝不会将您的信息透露给第三方。"
+  },
+  "footer": {
+    "legalEntity": "\"BERQUT GROUP\" 有限责任公司",
+    "address": "哈萨克斯坦共和国，阿斯塔纳",
+    "rights": "版权所有。",
+    "phoneGermany": "德国",
+    "phoneKazakhstan": "哈萨克斯坦",
+    "emailLabel": "邮箱",
+    "websiteLabel": "网站"
+  },
+  "intro": {
+    "skip": "跳过片头"
+  }
+}

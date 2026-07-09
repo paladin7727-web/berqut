@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "BERQUT GROUP — Premium-Immobilien und Umzug nach Astana, Kasachstan",
+    "description": "Immobilienauswahl, Sanierung und Relocation in Kasachstan aus einer Hand. Deutsche Präzision und internationale Erfahrung für anspruchsvolle Investoren in Astana."
+  },
+  "nav": {
+    "about": "Über uns",
+    "realEstate": "Immobilien",
+    "construction": "Bau",
+    "relocation": "Umzug",
+    "founder": "Gründer",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "tagline": "Von leeren Quadratmetern zum fertigen Premium-Zuhause",
+    "cta": "Zur Website"
+  },
+  "about": {
+    "title": "Über BERQUT GROUP",
+    "description": "BERQUT GROUP ist ein Premium-Unternehmen in Kasachstan für Kunden, die mehr als einen Makler brauchen: einen kompletten Service rund um Immobilien, Renovierung, Wohnen und Immobilienverwaltung. Wir übernehmen die Verantwortung für den gesamten Weg: Auswahl, Prüfung, Kaufabwicklung, Renovierung, Innenausbau, Möblierung, Vermietung und langfristige Verwaltung.",
+    "pillars": {
+      "onePoint": {
+        "title": "Ein Ansprechpartner",
+        "description": "Ein Partner für Immobilien, Renovierung und Verwaltung."
+      },
+      "highClass": {
+        "title": "Höchste Klasse",
+        "description": "Premium-Präsentation und Qualitätskontrolle."
+      },
+      "kazakhstan": {
+        "title": "Kasachstan",
+        "description": "Astana und Kasachstan für internationale Kunden."
+      }
+    }
+  },
+  "realEstate": {
+    "title": "Immobilien — Vermittlung & Investitionen",
+    "description": "Auswahl von Wohnungen, Häusern, Residenzen und Gewerbeimmobilien. Prüfung von Objekt, Lage, Preis und Liquidität. Begleitung der Transaktion bis zur Schlüsselübergabe. Investition: Vermietung, Weiterverkauf und wertsteigernde Renovierung.",
+    "process": ["Finden", "Prüfen", "Abschließen", "Wachsen"],
+    "processDetails": [
+      "Wir finden Wohnungen, Häuser, Residenzen und Gewerbeimmobilien passend zu Ihren Zielen und Ihrem Budget.",
+      "Objekt, Lage, Preis und Liquidität werden vor dem Kauf geprüft — keine Überraschungen.",
+      "Wir begleiten die gesamte Transaktion, von der Verhandlung bis zur Schlüsselübergabe.",
+      "Vermietung, Weiterverkauf und wertsteigernde Renovierung machen Ihre Immobilie zur rentablen Anlage."
+    ],
+    "cta": "Immobilie besprechen"
+  },
+  "construction": {
+    "title": "Bau — Renovierung & Wohnen",
+    "description": "Bau, Kernsanierung und exklusiver Innenausbau. Interieur: Planung, Beleuchtung, Materialien, Möbel und Geräte. Fit-out: Küchen, Türen, Sanitär, Textilien und Dekor. Home Staging für Verkauf, Vermietung oder Eigennutzung.",
+    "cta": "Projekt starten"
+  },
+  "relocation": {
+    "title": "Umzug — Verwaltung & Sprachen",
+    "description": "Umzug für Familien, Unternehmer und Investoren. Immobilienverwaltung: Mieter, Nebenkosten, Reparaturen und Berichte. Persönlicher Kundenservice: Vertraulichkeit und höchster Standard. Luxusimmobilien und Gewerbe: Wohnungen, Villen, Büros, Erstlinienobjekte.",
+    "languages": "Russisch, Kasachisch, Englisch, Deutsch, Chinesisch, Spanisch, Italienisch",
+    "cta": "Umzug planen"
+  },
+  "founder": {
+    "title": "Über Robert Sowa",
+    "name": "Robert Sowa",
+    "role": "Gründer, BERQUT GROUP",
+    "bio": "Robert Sowa, geboren 1971, ist deutscher Staatsbürger und Gründer von BERQUT Real Estate & Living International. Er spricht fließend Russisch, Englisch, Deutsch, Polnisch und Italienisch. Mit 35 Jahren internationaler Erfahrung im Bauwesen und industriellen Engineering hat Robert zu bedeutenden mehrmillionenschweren Projekten auf mehreren Kontinenten beigetragen — von Australien und China über Europa, Nord- und Südamerika bis zum Nahen Osten und Zentralasien. Er ist bekannt für Präzision, Disziplin, ingenieurtechnische Klarheit und persönliche Verantwortung für jedes Ergebnis. Hunderte internationale Ingenieur- und Bauunternehmen haben ihm ihre Projekte anvertraut. Heute bringt er diesen Standard, diese Erfahrung und internationale Denkweise über BERQUT nach Kasachstan."
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "formName": "Name",
+    "formEmail": "E-Mail",
+    "formPhone": "Telefon",
+    "formType": "Ich bin...",
+    "formTypeInvestor": "Investor",
+    "formTypeFamily": "Familie",
+    "formTypeEntrepreneur": "Unternehmer",
+    "formMessage": "Nachricht",
+    "formSubmit": "Senden",
+    "privacy": "Wir respektieren Ihre Privatsphäre und geben Ihre Daten niemals an Dritte weiter."
+  },
+  "footer": {
+    "legalEntity": "LLP \"BERQUT GROUP\"",
+    "address": "Astana, Republik Kasachstan",
+    "rights": "Alle Rechte vorbehalten.",
+    "phoneGermany": "Deutschland",
+    "phoneKazakhstan": "Kasachstan",
+    "emailLabel": "E-Mail",
+    "websiteLabel": "Website"
+  },
+  "intro": {
+    "skip": "Intro überspringen"
+  }
+}

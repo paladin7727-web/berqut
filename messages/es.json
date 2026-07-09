@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "BERQUT GROUP — Bienes Raíces Premium y Reubicación en Astaná, Kazajistán",
+    "description": "Un solo socio para inversión inmobiliaria, reforma y reubicación en Astaná. Servicio integral de alto nivel para clientes internacionales en Kazajistán."
+  },
+  "nav": {
+    "about": "Nosotros",
+    "realEstate": "Inmobiliaria",
+    "construction": "Construcción",
+    "relocation": "Reubicación",
+    "founder": "Fundador",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "tagline": "De metros cuadrados vacíos a una vida premium lista para habitar",
+    "cta": "Entrar al sitio"
+  },
+  "about": {
+    "title": "Sobre BERQUT GROUP",
+    "description": "BERQUT GROUP es una empresa premium en Kazajistán para clientes que necesitan más que un agente inmobiliario: un servicio integral de bienes raíces, reforma, vivienda y gestión patrimonial. Asumimos la responsabilidad de todo el proceso: selección, verificación, acompañamiento de la operación, reforma, interiorismo, amueblado, alquiler y gestión a largo plazo.",
+    "pillars": {
+      "onePoint": {
+        "title": "Un único interlocutor",
+        "description": "Un solo socio para propiedad, reforma y gestión."
+      },
+      "highClass": {
+        "title": "Alta gama",
+        "description": "Presentación premium y control de calidad."
+      },
+      "kazakhstan": {
+        "title": "Kazajistán",
+        "description": "Astaná y Kazajistán para clientes internacionales."
+      }
+    }
+  },
+  "realEstate": {
+    "title": "Inmobiliaria — Intermediación e inversiones",
+    "description": "Selección de apartamentos, casas, residencias y locales comerciales. Verificación de la propiedad, la zona, el precio y la liquidez. Acompañamiento de la operación hasta la entrega de llaves. Inversión: alquiler, reventa y reforma con valor añadido.",
+    "process": ["Buscar", "Verificar", "Cerrar", "Crecer"],
+    "processDetails": [
+      "Seleccionamos apartamentos, casas, residencias y locales comerciales según sus objetivos y presupuesto.",
+      "Comprobamos la propiedad, la zona, el precio y la liquidez antes de comprometerse, sin sorpresas.",
+      "Acompañamos toda la operación, desde la negociación hasta la entrega de llaves.",
+      "Alquiler, reventa y reforma con valor añadido convierten su propiedad en un activo rentable."
+    ],
+    "cta": "Consultar una propiedad"
+  },
+  "construction": {
+    "title": "Construcción — Reforma y vida",
+    "description": "Construcción, reforma integral y acabados de autor. Interiorismo: distribución, iluminación, materiales, mobiliario y electrodomésticos. Fit-out: cocinas, puertas, sanitarios, textiles y decoración. Home staging para venta, alquiler o uso propio.",
+    "cta": "Iniciar un proyecto"
+  },
+  "relocation": {
+    "title": "Reubicación — Gestión e idiomas",
+    "description": "Reubicación para familias, emprendedores e inversores. Gestión de propiedades: inquilinos, suministros, reparaciones e informes. Atención personalizada: confidencialidad y un estándar de servicio elevado. Viviendas de lujo y locales comerciales: apartamentos, chalets, oficinas y ubicaciones de primera línea.",
+    "languages": "Ruso, kazajo, inglés, alemán, chino, español e italiano",
+    "cta": "Planificar su reubicación"
+  },
+  "founder": {
+    "title": "Sobre Robert Sowa",
+    "name": "Robert Sowa",
+    "role": "Fundador de BERQUT GROUP",
+    "bio": "Robert Sowa, nacido en 1971, es ciudadano alemán y fundador de BERQUT Real Estate & Living International. Habla con fluidez ruso, inglés, alemán, polaco e italiano. Con 35 años de experiencia internacional en construcción e ingeniería industrial, Robert ha participado en grandes proyectos multimillonarios en distintos continentes: desde Australia y China hasta Europa, América del Norte y del Sur, Oriente Medio y Asia Central. Es reconocido por su precisión, disciplina, claridad técnica y responsabilidad personal por cada resultado. Cientos de empresas internacionales de ingeniería y construcción le han confiado sus proyectos. Hoy trae ese estándar, esa experiencia y esa mentalidad internacional a Kazajistán a través de BERQUT."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "formName": "Nombre",
+    "formEmail": "Correo electrónico",
+    "formPhone": "Teléfono",
+    "formType": "Soy...",
+    "formTypeInvestor": "Inversor",
+    "formTypeFamily": "Familia",
+    "formTypeEntrepreneur": "Emprendedor",
+    "formMessage": "Mensaje",
+    "formSubmit": "Enviar",
+    "privacy": "Respetamos su privacidad y nunca compartimos sus datos con terceros."
+  },
+  "footer": {
+    "legalEntity": "LLP \"BERQUT GROUP\"",
+    "address": "Astaná, República de Kazajistán",
+    "rights": "Todos los derechos reservados.",
+    "phoneGermany": "Alemania",
+    "phoneKazakhstan": "Kazajistán",
+    "emailLabel": "Correo electrónico",
+    "websiteLabel": "Sitio web"
+  },
+  "intro": {
+    "skip": "Saltar introducción"
+  }
+}
