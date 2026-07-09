@@ -73,6 +73,10 @@
     "formTypeEntrepreneur": "企业家",
     "formMessage": "留言",
     "formSubmit": "提交",
+    "sending": "正在发送…",
+    "success": "感谢您的留言，我们已收到并会尽快与您联系。",
+    "error": "发送失败，请重试，或发送邮件至 Roberts@berqut.com。",
+    "errorValidation": "请填写您的姓名、有效的邮箱和留言内容。",
     "privacy": "我们尊重您的隐私，绝不会将您的信息透露给第三方。"
   },
   "footer": {

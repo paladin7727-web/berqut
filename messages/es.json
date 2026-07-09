@@ -73,6 +73,10 @@
     "formTypeEntrepreneur": "Emprendedor",
     "formMessage": "Mensaje",
     "formSubmit": "Enviar",
+    "sending": "Enviando…",
+    "success": "Gracias. Su mensaje ha sido enviado — nos pondremos en contacto en breve.",
+    "error": "Algo salió mal. Inténtelo de nuevo o escríbanos a Roberts@berqut.com.",
+    "errorValidation": "Introduzca su nombre, un correo válido y un mensaje.",
     "privacy": "Respetamos su privacidad y nunca compartimos sus datos con terceros."
   },
   "footer": {
