@@ -5,6 +5,16 @@ import { Resend } from "resend";
 // overridable via env so the sender can move to a verified berqut.com domain
 // later without a code change. `onboarding@resend.dev` works on Resend's free
 // tier with no domain verification, so the form is functional immediately.
+//
+// TEMPORARY (demo state): Resend's shared `onboarding@resend.dev` sender can
+// only deliver to the Resend account owner's own address until a domain is
+// verified. We don't have DNS access to berqut.com yet, so the Vercel
+// production env currently sets CONTACT_TO_EMAIL to the account owner's
+// personal email so the form is fully functional for the demo. Once the
+// client grants DNS access: verify berqut.com in Resend, set
+// CONTACT_FROM_EMAIL to a berqut.com address, remove the CONTACT_TO_EMAIL
+// override in Vercel (or set it to "Roberts@berqut.com") so it falls back to
+// the default below, and redeploy.
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "Roberts@berqut.com";
 const FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL ?? "BERQUT Website <onboarding@resend.dev>";
