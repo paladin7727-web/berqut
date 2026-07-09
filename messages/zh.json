@@ -86,5 +86,24 @@
   },
   "intro": {
     "skip": "跳过片头"
+  },
+  "chat": {
+    "title": "BERQUT 助手",
+    "open": "在线咨询",
+    "close": "关闭对话",
+    "placeholder": "咨询我们的服务…",
+    "send": "发送",
+    "greeting": "您好，我是 BERQUT 助手。您可以咨询我们的房地产、建筑装修和移居服务，了解我们的创始人，或询问联系方式。",
+    "disclaimer": "AI 助手 — 仅解答 BERQUT GROUP 相关问题。",
+    "typing": "正在输入…",
+    "suggestions": {
+      "services": "你们提供哪些服务？",
+      "founder": "创始人是谁？",
+      "contact": "如何联系你们？"
+    },
+    "servicesIntro": "BERQUT GROUP 提供三大方向的服务：",
+    "servicesOutro": "如需了解详情，请咨询其中任意一项。",
+    "contactIntro": "您可以通过以下方式联系 BERQUT GROUP：",
+    "fallback": "我可以解答关于 BERQUT GROUP 服务、创始人罗伯特·索瓦以及联系方式的问题。您想了解什么？"
   }
 }

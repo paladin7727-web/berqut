@@ -169,6 +169,27 @@ h3,
   transform: translateY(0);
 }
 
+/* Chatbot typing indicator dots. */
+.chat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--accent);
+  animation: chat-bounce 1.2s var(--ease-out-expo) infinite;
+}
+@keyframes chat-bounce {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  35% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
 /* ---------- Interactive layers ---------- */
 
 /* Parallax skyline background. Movement is driven entirely by CSS custom
@@ -309,5 +330,8 @@ h3,
   }
   .cursor-glow {
     display: none;
+  }
+  .chat-dot {
+    animation: none;
   }
 }

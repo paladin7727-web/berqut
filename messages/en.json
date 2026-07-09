@@ -86,5 +86,24 @@
   },
   "intro": {
     "skip": "Skip intro"
+  },
+  "chat": {
+    "title": "BERQUT Assistant",
+    "open": "Chat with us",
+    "close": "Close chat",
+    "placeholder": "Ask about our services…",
+    "send": "Send",
+    "greeting": "Hello. I'm the BERQUT assistant. Ask me about our real estate, construction and relocation services, our founder, or how to reach us.",
+    "disclaimer": "AI assistant — answers about BERQUT GROUP only.",
+    "typing": "Typing…",
+    "suggestions": {
+      "services": "What services do you offer?",
+      "founder": "Who is the founder?",
+      "contact": "How can I contact you?"
+    },
+    "servicesIntro": "BERQUT GROUP covers three directions:",
+    "servicesOutro": "Ask about any of them for more detail.",
+    "contactIntro": "You can reach BERQUT GROUP here:",
+    "fallback": "I can help with questions about BERQUT GROUP's services, our founder Robert Sowa, and how to get in touch. What would you like to know?"
   }
 }

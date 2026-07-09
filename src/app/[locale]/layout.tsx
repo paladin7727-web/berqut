@@ -13,6 +13,7 @@ import {
 import { buildOrganizationSchema } from "@/lib/schema";
 import SkylineBackground from "@/components/SkylineBackground";
 import CursorGlow from "@/components/CursorGlow";
+import Chatbot from "@/components/Chatbot";
 import "../globals.css";
 
 // Editorial luxury serif for headlines — dramatic thick/thin contrast that
@@ -110,6 +111,7 @@ export default async function LocaleLayout({
         <CursorGlow />
         <NextIntlClientProvider locale={locale}>
           {children}
+          <Chatbot />
         </NextIntlClientProvider>
       </body>
     </html>

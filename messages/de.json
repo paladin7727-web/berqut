@@ -86,5 +86,24 @@
   },
   "intro": {
     "skip": "Intro überspringen"
+  },
+  "chat": {
+    "title": "BERQUT Assistent",
+    "open": "Schreiben Sie uns",
+    "close": "Chat schließen",
+    "placeholder": "Fragen Sie zu unseren Leistungen…",
+    "send": "Senden",
+    "greeting": "Guten Tag. Ich bin der BERQUT Assistent. Fragen Sie mich zu unseren Leistungen in Immobilien, Bau und Umzug, zu unserem Gründer oder wie Sie uns erreichen.",
+    "disclaimer": "KI-Assistent — Antworten nur zu BERQUT GROUP.",
+    "typing": "Schreibt…",
+    "suggestions": {
+      "services": "Welche Leistungen bieten Sie an?",
+      "founder": "Wer ist der Gründer?",
+      "contact": "Wie kann ich Sie kontaktieren?"
+    },
+    "servicesIntro": "BERQUT GROUP umfasst drei Bereiche:",
+    "servicesOutro": "Fragen Sie nach Details zu einem davon.",
+    "contactIntro": "So erreichen Sie BERQUT GROUP:",
+    "fallback": "Ich helfe bei Fragen zu den Leistungen von BERQUT GROUP, zu unserem Gründer Robert Sowa und zur Kontaktaufnahme. Was möchten Sie wissen?"
   }
 }

@@ -44,4 +44,7 @@ next-env.d.ts
 /.tools/
 /.source-assets/
 
+# claude runtime state
+.claude/*.lock
+
 .vercel
