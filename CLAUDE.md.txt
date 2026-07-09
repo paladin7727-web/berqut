@@ -1,12 +1,31 @@
 # BERQUT GROUP - Web Project Brief
 
+## WORKING INSTRUCTIONS
+- Do NOT ask for permission before running commands, installing packages, or creating files
+- Do NOT ask "should I do X?" — just do it
+- If something breaks, fix it automatically, then report what happened
+- Work autonomously and finish tasks without interrupting for approvals
+- Only ask questions if something is genuinely ambiguous (not just to be polite)
+- Verify claims programmatically (dispatch real events, check DOM/network/build output) 
+  rather than just asserting something works
+- After each meaningful change: commit and push to git (repo: paladin7727-web/berqut)
+- Vercel auto-deploy-on-push is NOT working (known issue, not worth further debugging) — 
+  after pushing, always also run a manual `vercel --prod` deploy to keep the live site in sync
+
 ## ABOUT THE COMPANY
 BERQUT GROUP is a premium real estate company in Astana for foreign and local clients.
-- Founder: Robert Sowa, born in 1971, German citizen
-- 35 years of experience in construction and industrial engineering (Australia, China, Europe, Middle East, Central Asia)
+- Founder: Robert Sowa, born 1971, German citizen
+- 35 years of experience in construction and industrial engineering (Australia, China, 
+  Europe, Middle East, Central Asia)
 - Fluent in Russian, English, German, Polish, Italian
 - Legal entity: LLP "BERQUT GROUP", Astana, Republic of Kazakhstan
 - Tagline: "From empty square metres to ready premium living"
+
+## CONTACT INFO (real, already in Footer)
+- Phone (Germany): +49 152 09333151
+- Phone (Kazakhstan): +7 707 299 9190
+- Email: Roberts@berqut.com
+- Website: BERQUT.COM
 
 ## THREE CORE PILLARS
 1. **ONE POINT** — one partner for property, renovation and management
@@ -14,174 +33,100 @@ BERQUT GROUP is a premium real estate company in Astana for foreign and local cl
 3. **KAZAKHSTAN** — Astana and Kazakhstan for international clients
 
 ## THREE SERVICE DIRECTIONS
+1. **Real Estate** - Brokerage & Investments (FIND → VERIFY → DEAL → GROW process, 
+   now interactive/clickable on site)
+2. **Construction** - Renovation & Living
+3. **Relocation** - Management & Languages
 
-### 1. REAL ESTATE - Brokerage & Investments
-- Selection of apartments, houses, residences and commercial properties
-- Verification of property, district, price and liquidity
-- Transaction support until keys are delivered
-- Investment: rental, resale and value-added renovation
-- Key process: FIND → VERIFY → DEAL → GROW
+## ACTUAL TECH STACK (as built, not the original plan)
+- **Framework**: Next.js 16, App Router, TypeScript, Tailwind
+- **i18n**: `next-intl` (NOT next-i18next — that only supports Pages Router)
+- **Animation**: CSS transitions + IntersectionObserver (GSAP was removed — 
+  same visual result, 20% smaller JS bundle)
+- **3D**: Three.js/react-three-fiber were removed entirely (placeholder intro 
+  scene was replaced by the real branded video)
+- **Fonts**: Playfair Display (headlines) + Inter (body), via next/font
+- **Deployment**: Vercel, project name `berqut-website`, live at 
+  https://berqut-website.vercel.app
+- **Repo**: GitHub `paladin7727-web/berqut`, branch `main`
 
-### 2. CONSTRUCTION - Renovation & Living
-- Construction, capital renovation and signature finishing
-- Interior: planning, lighting, materials, furniture and appliances
-- Fit-out: kitchens, doors, sanitary ware, textiles and decor
-- Home staging for sale, rental or living
-- Supply of furniture and interior solutions through reliable channels
+## BRAND ASSETS (real files, already in project)
+- Logo: `public/images/logo.jpeg` — "BERQUT GROUP" lockup, gold eagle on black
+- ⚠️ Note: intro video ends on a DIFFERENT lockup — "BERQUT.COM" — not identical 
+  to logo.jpeg. Flagged to client, awaiting which is the final version.
+- Founder photo: `public/images/robert-sowa.jpeg`
+- Intro video: `public/videos/video.mp4` (transcoded to `intro.mp4`/`intro.webm`/
+  `poster.jpg` for web delivery) — real 15s branded sequence: golden eagle emblem 
+  → aerial Astana/Bayterek Tower → golden-hour hero shot → ends locked on logo. 
+  Plays once per session, rests on the final frame as the clickable trigger.
 
-### 3. RELOCATION - Management & Languages
-- Relocation for families, entrepreneurs and investors
-- Property management: tenants, utilities, repairs and reports
-- Private client service: confidentiality and high-standard support
-- Luxury homes and commercial: apartments, cottages, offices, first-line spaces
-- Languages: Russian, Kazakh, English, German, Chinese, Spanish, Italian
+## COLOR & DESIGN SYSTEM
+- Background: NOT flat black — radial dark gradient (#13110b → #0a0908 → #030303) 
+  + subtle SVG film grain overlay (opacity 0.045)
+- Accent: bronze-gold gradient (champagne → gold → bronze: #ecdcb0, #c9a34e, #8a6d3b), 
+  base solid gold #b8925a for borders/glows
+- Typography: Playfair Display serif headlines with gradient-clip text, Inter body, 
+  generous letter-spacing on eyebrows (0.4em)
+- Spacing: generous — py-28 to py-40 sections, max-w-6xl containers, leading-loose body text
+- Gold divider rules between sections
 
-## TECHNICAL REQUIREMENTS
+## INTERACTIVITY (built and verified)
+- **Intro**: full-screen video plays once/session, logo becomes clickable trigger 
+  on completion; static branded fallback for prefers-reduced-motion/saveData
+- **Background**: interactive line-art (currently a skyline-style motif — client's 
+  developer/designer may swap for an eagle-wing organic motif later), subtle mouse 
+  parallax + scroll drift
+- **CursorGlow**: soft gold light follows cursor, desktop only (hover:hover + 
+  pointer:fine gate — correctly disabled on touch devices, this is intentional)
+- **TiltCard**: 3D tilt-toward-cursor on the 3 pillar cards + 3 service description 
+  cards, with gold glare tracking
+- **ProcessSteps**: FIND→VERIFY→DEAL→GROW is clickable/hoverable, reveals detail 
+  copy per stage (translated in all 7 languages)
+- All interactive effects respect prefers-reduced-motion and gate off touch devices 
+  appropriately; zero continuous animation loops (verified 0 idle requestAnimationFrame)
 
-### Visual & Design
-- **Intro Animation**: Full-screen 3D animation (WebGL / Three.js) on page load
-  - Dynamic visual sequence with rendering of company objects/scenes
-  - Animation completes with BERQUT logo centered on screen (golden color)
-  - Logo is clickable trigger — click opens main website
-  - Intro shows once per session (sessionStorage), returning visitors go straight to main site
-  - Mobile/weak devices: simplified version (video loop instead of full WebGL)
-  - Must respect prefers-reduced-motion and include "Skip intro" button
+## MULTILINGUAL & SEO (done)
+- 7 languages: RU, KK, EN, DE, ZH, ES, IT — all fully translated (body content + 
+  meta), not placeholder anymore
+- URL structure: `/ru/`, `/en/`, `/kk/`, etc. on main domain (folders, not subdomains)
+- hreflang tags across all 7 locales + x-default, verified live in rendered `<head>`
+- Multilingual sitemap.xml + robots.txt
+- schema.org RealEstateAgent/LocalBusiness JSON-LD (only real facts, no fabricated 
+  phone/address/reviews — add real data as it becomes available)
+- Meta title/description market-adapted per locale (not literal translations) — 
+  e.g. RU emphasizes "one partner instead of ten contractors", DE emphasizes German 
+  engineering precision, ZH uses investment-and-lifestyle framing
+- Open Graph + Twitter cards
 
-- **Color Scheme**:
-  - Black background everywhere (required)
-  - Single accent color: warm bronze-gold (eagle/Berqut symbolism)
-  - Premium typography (serif for headlines, neutral sans for body text)
+## WHAT'S BUILT (status: done)
+- Intro video sequence with clickable logo trigger
+- Full design system (typography, color, spacing, grain texture)
+- Interactive background, cursor glow, tilt cards, clickable process steps
+- Founder section (photo + bio, two-column desktop / stacked mobile)
+- Contact/lead form (name, email, phone, message, client-type dropdown) — 
+  visual only, NO backend yet
+- Footer with real contact info
+- SEO layer (hreflang, sitemap, schema.org, market-adapted meta)
+- Full 7-language translation (body + meta)
+- Performance-optimized (GSAP removed, unused three.js packages removed, 
+  image sizing bug fixed, ~170KB gzip total JS)
+- Deployed and live on Vercel
 
-### Multilingual & SEO (HIGHEST PRIORITY)
-- **7 Languages**: Russian, Kazakh, English, German, Chinese, Spanish, Italian
-- **Architecture**: Language folders, not subdomains (/ru/, /en/, /kz/, /de/, /zh/, /es/, /it/ on main domain)
-- **hreflang tags**: Correct hreflang between all language versions
-- **Sitemap**: Multilingual sitemap.xml for each language
-- **Schema.org markup**: RealEstateAgent, LocalBusiness on every language version
-- **Core Web Vitals**: Optimize for LCP, FID, CLS (3D assets must not block page load)
-- **SEO Content**: Localized meta titles/descriptions optimized for each geo-market (not just translations)
+## WHAT'S NOT BUILT YET
+- **AI chatbot** — not started, this is the next task. Plan: floating widget, 
+  bottom-right, matches site style, responds in visitor's current locale, 
+  scoped to company info only. UI/mock logic first, real Claude API wiring 
+  is a separate follow-up (needs its own API billing, distinct from personal 
+  Claude Pro subscription)
+- Contact form backend (currently visual only)
+- Domain consolidation — BERQUT.COM / BERQUTGROUP.COM / BERQUT-GROUP.COM are 
+  NOT yet connected to this deployment; only the vercel.app URL is live
+- Vercel auto-deploy-on-push (webhook issue, unresolved after multiple attempts — 
+  using manual deploy as the working workaround, not worth further debugging time)
 
-### Domain Architecture
-- **Main domain**: BERQUT.COM (primary)
-- **Secondary domains**: BERQUTGROUP.COM, BERQUT-GROUP.COM
-- **Redirect strategy**: 301 server-level redirects from secondary to main (preserve SEO weight)
-
-### Performance & Technical
-- **Framework**: Next.js (SSR/SSG, native i18n routing, SEO-friendly)
-- **3D Stack**: react-three-fiber / Three.js + GSAP for animations
-- **i18n**: next-i18next or similar for clean URL structure
-- **Mobile-first**: Fully responsive, tested on mobile
-- **AI Chatbot** (MVP): Multilingual LLM-based bot (Phase 2), responds to questions about services
-- **Loading**: Critical content (text, SEO markup) renders independently from WebGL (lazy-load Three.js)
-
-## WEBSITE STRUCTURE
-
-### Pages/Sections
-1. **Hero + Intro Animation**
-   - 3D splash screen
-   - Logo as trigger to main site
-
-2. **About Company**
-   - Three pillars (ONE POINT, HIGH CLASS, KAZAKHSTAN)
-   - Visual cards
-
-3. **Real Estate Brokerage & Investments**
-   - FIND → VERIFY → DEAL → GROW timeline/process
-   - Service description
-   - Call-to-action
-
-4. **Construction, Renovation & Living**
-   - Renovation process
-   - Interior design approach
-   - Service description
-
-5. **Relocation, Management & Languages**
-   - Relocation support
-   - Property management
-   - Languages offered
-   - Call-to-action
-
-6. **About Robert Sowa**
-   - Photo
-   - Bio (35 years experience, international projects, languages)
-   - Trust-building elements
-
-7. **Contact / Lead Form**
-   - Contact information (phone, email, address)
-   - Lead qualification form (investor / family / entrepreneur)
-   - Privacy notice
-
-8. **Footer**
-   - Legal entity: LLP "BERQUT GROUP"
-   - Address: Astana, Kazakhstan
-   - Contact links
-   - Language switcher (7 languages)
-   - Social links
-
-9. **AI Chatbot** (integrated)
-   - Multilingual support
-   - Answers questions about services
-   - Qualifies leads
-
-## CONTENT (Ready Texts - From Brochure)
-
-### About Company - EN
-BERQUT GROUP is a premium company in Kazakhstan for clients who need more than a realtor: complete service around real estate, renovation, living and property management.
-
-We take responsibility for the full path: selection, verification, deal support, renovation, interior, furnishing, rental and long-term management.
-
-### About Robert Sowa - EN
-Robert Sowa, born in 1971, is a German citizen and the founder of BERQUT Real Estate & Living International. He is fluent in Russian, English, German, Polish and Italian. With 35 years of international experience in construction and industrial engineering, Robert has contributed to major multimillion-dollar projects across continents - from Australia and China to Europe, North and South America, the Middle East and Central Asia. He is known for precision, discipline, engineering clarity and personal responsibility for every result. Hundreds of global engineering and construction companies have entrusted their projects to him. Today he brings this standard, experience and international mindset to Kazakhstan through BERQUT.
-
-### About Company - RU
-BERQUT GROUP — премиальная компания в Казахстане для клиентов, которым нужен не обычный риэлтор, а полный сервис вокруг недвижимости, ремонта, жизни и управления объектом.
-
-Мы берем на себя весь путь: подбор, проверку, сделку, ремонт, интерьер, меблировку, аренду и дальнейшее управление.
-
-### About Robert Sowa - RU
-Роберт Сова, рожденный в 1971 году, гражданин Германии и основатель BERQUT Real Estate & Living International. Он свободно говорит на русском, английском, немецком, польском и итальянском языках. За 35 лет международной работы в строительстве и промышленном инжиниринге Роберт участвовал в крупных мультимиллионных проектах по всему миру - от Австралии и Китая до Европы, Северной и Южной Америки, Ближнего Востока и Центральной Азии. Его профессиональная репутация построена на точности, дисциплине, инженерной логике и персональной ответственности за результат. Сотни международных инженерных и строительных компаний доверяли ему свои проекты. Сегодня этот опыт, стандарт качества и глобальное мышление Роберт приносит в Казахстан через компанию BERQUT.
-
-## DESIGN DIRECTION
-- Dark luxury minimalism (black base + gold accents)
-- Premium, sober aesthetic (not flashy)
-- Graphic motif: Eagle feather / wing silhouette (Berqut symbolism) used sparingly in intro, section dividers, favicon
-- Motion design: Smooth, elegant animations (not cartoon-style)
-- Typography: Geometric or serif headlines, neutral sans for body (professional tone)
-
-## PROJECT TIMELINE & MILESTONES
-
-### Phase 1: Draft v1 (End of this week - Sunday/Monday)
-- Interactive Figma prototype OR basic frontend scaffold
-- Intro animation concept (visual logic, not full 3D polish)
-- Site structure and visual direction
-- 4 languages: Russian, English, Kazakh, German (content ready)
-- SEO architecture laid out but not fully optimized
-- Goal: Show client the direction and get approval
-
-### Phase 2: Full Build (After Phase 1 approval)
-- Complete 4-language implementation with full Three.js intro
-- Remaining 3 languages (Spanish, Italian, Chinese) - content or translations
-- Full SEO optimization (hreflang, sitemap, meta tags, schema markup)
-- AI chatbot MVP integration
-- Performance optimization (Core Web Vitals)
-- Testing and refinement
-
-### Phase 3: Launch & Scaling
-- Domain consolidation (301 redirects)
-- Live deployment
-- Monitoring and adjustments
-- Optional: AI video generation, advanced chatbot features
-
-## TONE & MESSAGING
-- Professional, premium, trustworthy
-- International audience (not Kazakhstan-centric, but Kazakhstan-proud)
-- Focus on "one partner for everything" (not typical realtor)
-- Emphasize experience, precision, quality control
-- Build confidence in founder's credentials and international network
-
-## KEY SUCCESS METRICS
-1. SEO ranking on all 7 languages for target keywords (e.g., "premium living Astana", "relocation Kazakhstan")
-2. Site speed (Core Web Vitals) despite 3D animations
-3. Lead generation through form submissions and chatbot interactions
-4. Mobile conversion rate (high percentage of international users on mobile)
-5. Proper 301 redirects maintaining SEO weight across domains
+## PROJECT STATUS
+Draft ready to show client. Live preview: https://berqut-website.vercel.app
+Open questions for client: which logo lockup is final (BERQUT.COM vs BERQUT GROUP), 
+pricing not yet agreed (client's framing: "better site = higher pay", no fixed 
+number set), his own "developments" (naработки) not yet received, TikTok style 
+reference received but not yet reviewed in detail.
